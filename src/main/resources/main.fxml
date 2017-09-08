@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="385.0">
+         <children>
+            <MenuBar layoutY="13.0" prefHeight="25.0" prefWidth="385.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                      <MenuItem fx:id="menuItemSellerView" mnemonicParsing="false" onAction="#handleSellerItemView" text="Seller" />
+                      <MenuItem fx:id="menuItemBuyerView" mnemonicParsing="false" onAction="#handleBuyerItemView" text="Buyer" />
+                      <MenuItem fx:id="menuItemProductView" mnemonicParsing="false" onAction="#handleProductItemView" text="Product" />
+                      <MenuItem fx:id="menuItemBidView" mnemonicParsing="false" onAction="#handleBidItemView" text="Bid" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Add">
+                  <items>
+                        <MenuItem fx:id="menuItemSellerAdd" mnemonicParsing="false" onAction="#handleSellerItemAdd" text="Seller" />
+                        <MenuItem fx:id="menuItemBuyerAdd" mnemonicParsing="false" onAction="#handleBuyerItemAdd" text="Buyer" />
+                        <MenuItem fx:id="menuItemProductAdd" mnemonicParsing="false" onAction="#handleProductItemAdd" text="Product" />
+                        <MenuItem fx:id="menuItemBidAdd" mnemonicParsing="false" onAction="#handleBidItemAdd" text="Bid" />
+                  </items>
+                </Menu>
+                  <Menu disable="true" mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem fx:id="menuItemSellerAdd1" mnemonicParsing="false" onAction="#handleSellerItemAdd" text="Seller" />
+                        <MenuItem fx:id="menuItemBuyerAdd1" mnemonicParsing="false" onAction="#handleBuyerItemAdd" text="Buyer" />
+                        <MenuItem fx:id="menuItemProductAdd1" mnemonicParsing="false" onAction="#handleProductItemAdd" text="Product" />
+                        <MenuItem fx:id="menuItemBidAdd1" mnemonicParsing="false" onAction="#handleBidItemAdd" text="Bid" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Delete">
+                  <items>
+                      <MenuItem fx:id="menuItemSellerDelete" mnemonicParsing="false" onAction="#handleSellerItemDelete" text="Seller" />
+                      <MenuItem fx:id="menuItemBuyerDelete" mnemonicParsing="false" onAction="#handleBuyerItemDelete" text="Buyer" />
+                      <MenuItem fx:id="menuItemProductDelete" mnemonicParsing="false" onAction="#handleProductItemDelete" text="Product" />
+                      <MenuItem fx:id="menuItemBidDelete" mnemonicParsing="false" onAction="#handleBidItemDelete" text="Bid" />
+                   </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#handleHelpAction" text="About" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Leave auction">
+                    <items>
+                        <MenuItem fx:id="leaveMenuItem" mnemonicParsing="false" onAction="#handleLeaveMenuItemAction" text="Leave auction" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Exit">
+                    <items>
+                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#handleCloseMenuItemAction" text="Exit" />
+                    </items>
+                </Menu>
+              </menus>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <effect>
+                  <Glow level="0.25" />
+               </effect>
+            </MenuBar>
+
+            <ImageView fitHeight="293.0" fitWidth="385.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@IMG_06092017.jpg" />
+                </image>
+            </ImageView>
+
+            <Button layoutX="110.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleCloseMenuItemAction" prefHeight="35.0" prefWidth="166.0" text="Exit" textFill="#0514ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="0.25" contrast="0.05" hue="0.02" saturation="-0.5" />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutY="65.0" prefHeight="39.0" prefWidth="166.0" text="Auction DB" textFill="#88d013">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="131.0" layoutY="262.0" prefHeight="13.0" prefWidth="124.0" text="2017 All rights Recerved" textFill="#2e15cf">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="269.0" layoutY="224.0" prefHeight="15.0" prefWidth="102.0" text="v. 1.0" textFill="#faaa07">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
