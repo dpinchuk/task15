@@ -39,6 +39,8 @@ public class ProductAddController {
     TableColumn<ProductEntity, Integer> sellerIdColumn;
     @FXML
     Button buttonAddProduct;
+    @FXML
+    ComboBox<String> comboSellerIdList;
 
     @FXML
     private void initialize() {
@@ -64,9 +66,6 @@ public class ProductAddController {
         productSalePrice.clear();
         comboSellerIdList.getSelectionModel().clearSelection();
     }
-
-    @FXML
-    ComboBox<String> comboSellerIdList;
 
     @FXML
     private void addToCombo() {

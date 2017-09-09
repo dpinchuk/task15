@@ -22,9 +22,6 @@ public class MainController {
     private FXMLLoader fxmlLoader;
 
     @FXML
-    MenuItem closeMenuItem;
-
-    @FXML
     Button buttonClose;
 
     @FXML
@@ -103,7 +100,8 @@ public class MainController {
         }
     }
 
-    public void handleSellerItemView(ActionEvent actionEvent) {
+    @FXML
+    private void handleSellerItemView(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/sellerView.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -113,12 +111,12 @@ public class MainController {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println("[SELLERS] Can't to open new Window!");
         }
     }
 
-    public void handleBuyerItemView(ActionEvent actionEvent) {
+    @FXML
+    private void handleBuyerItemView(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/buyerView.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -132,88 +130,14 @@ public class MainController {
         }
     }
 
-    public void handleBidItemView(ActionEvent actionEvent) {
+    @FXML
+    private void handleBidItemView(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/bidView.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("View Bids");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("[BIDS] Can't to open new Window!");
-        }
-    }
-
-    @FXML
-    private void handleProductItemEdit(ActionEvent actionEvent) throws IOException {
-        try {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/productEdit.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Edit a Product");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("[PRODUCTS] Can't to open new Window!");
-        }
-    }
-
-//    @FXML
-//    private void handleProductFormEdit(ActionEvent actionEvent) throws IOException {
-//        try {
-//            fxmlLoader = new FXMLLoader(getClass().getResource("/productEditForm.fxml"));
-//            Parent root = (Parent) fxmlLoader.load();
-//            Stage stage = new Stage();
-//            stage.initModality(Modality.APPLICATION_MODAL);
-//            stage.setTitle("Edit a Product");
-//            stage.setScene(new Scene(root));
-//            stage.show();
-//        } catch (Exception e) {
-//            System.out.println("[PRODUCTS] Can't to open new Window!");
-//        }
-//    }
-
-    @FXML
-    public void handleSellerItemEdit(ActionEvent actionEvent) {
-        try {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/sellerEdit.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Edit a Seller");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("[SELLERS] Can't to open new Window!");
-        }
-    }
-
-    @FXML
-    public void handleBuyerItemEdit(ActionEvent actionEvent) {
-        try {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/buyerEdit.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Edit a Buyer");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("[BUYERS] Can't to open new Window!");
-        }
-    }
-
-    @FXML
-    public void handleBidItemEdit(ActionEvent actionEvent) {
-        try {
-            fxmlLoader = new FXMLLoader(getClass().getResource("/bidEdit.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Edit a Bid");
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
@@ -237,7 +161,7 @@ public class MainController {
     }
 
     @FXML
-    public void handleSellerItemDelete(ActionEvent actionEvent) {
+    private void handleSellerItemDelete(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/sellerDelete.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -252,7 +176,7 @@ public class MainController {
     }
 
     @FXML
-    public void handleBuyerItemDelete(ActionEvent actionEvent) {
+    private void handleBuyerItemDelete(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/buyerDelete.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -267,7 +191,7 @@ public class MainController {
     }
 
     @FXML
-    public void handleBidItemDelete(ActionEvent actionEvent) {
+    private void handleBidItemDelete(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/bidDelete.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -282,12 +206,7 @@ public class MainController {
     }
 
     @FXML
-    public void handleCloseMenuItemAction(ActionEvent actionEvent) {
-        System.exit(0);
-    }
-
-    @FXML
-    public void handleLeaveMenuItemAction(ActionEvent actionEvent) {
+    private void handleLeaveMenuItemAction(ActionEvent actionEvent) {
         if (bidRepository.getBids().size() > 0) {
             try {
                 fxmlLoader = new FXMLLoader(getClass().getResource("/noExit.fxml"));
@@ -306,13 +225,7 @@ public class MainController {
     }
 
     @FXML
-    public void handleCloseWindowAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) buttonClose.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    public void handleHelpAction(ActionEvent actionEvent) {
+    private void handleHelpAction(ActionEvent actionEvent) {
         try {
             fxmlLoader = new FXMLLoader(getClass().getResource("/about.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -324,6 +237,17 @@ public class MainController {
         } catch (Exception e) {
             System.out.println("[HELP] Can't to open new Window!");
         }
+    }
+
+    @FXML
+    private void handleCloseWindowAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) buttonClose.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void handleCloseMenuItemAction(ActionEvent actionEvent) {
+        System.exit(0);
     }
 
 }
